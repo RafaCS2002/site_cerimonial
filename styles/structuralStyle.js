@@ -3,9 +3,6 @@ import styled from 'styled-components';
 import Img from 'next/image';
 import mainPageStyle from '../styles/mainPage.module.css'
 
-// export const Title = styled.h1`
-//     color:red;
-// `
 export const MainStyled = styled.main`
     background-color: black;
     font-size:1rem;
@@ -49,5 +46,37 @@ export function LogoImgStyled(props){
     const alt = props.alt;
     return(
         <Img src={source} alt={alt}/>
+    )
+}
+// Container das opcoes
+export const Holder = styled.div`
+    width:50%;
+    background-color:none;
+    display:inline-flex;
+    justify-content:space-evenly;
+    align-items: end;
+    padding-bottom:30px;
+    @media (max-width:600px){
+        padding-bottom:25px;
+        justify-content:center;
+    }
+`
+// Opcoes listadas para resolucoes maiores
+export function Option(props) {
+    const txt = props.children;
+    const Opc = styled.a`
+            display:flex;
+            all:unset;
+            &:hover{
+                color:#4e5965;
+            }
+            @media (max-width:600px){
+                display:none;
+            }
+    `
+    return (
+        <>
+            <Opc href={props.link}>{txt}</Opc>
+        </>
     )
 }
