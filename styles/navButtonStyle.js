@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const StyledNavUl = styled.ul`
 position:absolute;
+z-index:5;
 top:11%;
 right:0%;
 width:100%;
