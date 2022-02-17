@@ -34,13 +34,13 @@ export function NavButton() {
             {isOpen && (
                 <StyledNavUl>
                     <StyledNavLi>
-                        <Opc href='#' onClick={() => setIsOpen(false)}>Sobre Nos</Opc>
+                        <Opc href='#sobre_nos' onClick={() => setIsOpen(false)}>Sobre Nos</Opc>
                     </StyledNavLi>
                     <StyledNavLi>
-                        <Opc href='#' onClick={() => setIsOpen(false)}>Trabalhos</Opc>
+                        <Opc href='#trabalhos' onClick={() => setIsOpen(false)}>Trabalhos</Opc>
                     </StyledNavLi>
                     <StyledNavLi>
-                        <Opc href='#' onClick={() => setIsOpen(false)}>Metodo</Opc>
+                        <Opc href='#metodo' onClick={() => setIsOpen(false)}>Metodo</Opc>
                     </StyledNavLi>
                     <StyledNavLi>
                         <Opc href='#' onClick={() => setIsOpen(false)}>Aliados</Opc>
