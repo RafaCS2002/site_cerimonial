@@ -2,11 +2,14 @@
 import React from 'react';
 import {
     HeaderStyled, ButtonStyled, MainStyled, LogoImgStyled, DivLogoStyled,
-    Holder, Option
+    Holder, Option, IntroImage, SecNoneBg, SecTitle, SecTxt, SecWithBg, TextContainer,
+
 } from '../styles/structuralStyle';
 import logo from '../public/img/logo.png';
-import { NavButton, openNav, BarsOptions } from '../src/components/navButton';
-// import styles from '../styles/mainPage.module.css';
+import { NavButton } from '../src/components/navButton';
+import imgIntro from '../public/img/introImage.jpg';
+import imgArt01 from '../public/img/concert.jpg';
+import imgArt02 from '../public/img/fireworks.jpg';
 
 export default function mainApp() {
     return (
@@ -17,14 +20,49 @@ export default function mainApp() {
                         <LogoImgStyled src={logo} alt={'Logo da Empresa'} />
                     </DivLogoStyled>
                     <Holder>
-                        <Option link={'#'}>Sobre Nos</Option>
-                        <Option link={'#'}>Trabalhos</Option>
-                        <Option link={'#'}>Metodo</Option>
+                        <Option link={'#sobre_nos'}>Sobre Nos</Option>
+                        <Option link={'#trabalhos'}>Trabalhos</Option>
+                        <Option link={'#metodo'}>Metodo</Option>
                         <Option link={'#'}>Aliados</Option>
-                        <NavButton />
+                        <NavButton/>
                     </Holder>
                 </HeaderStyled>
-                
+                <IntroImage src={imgIntro} alt={'Banner inicial, foto de casamento'} />
+                <article>
+                    {/* Section #01 */}
+                    <SecNoneBg id='sobre_nos'>
+                        <SecTitle>Sobre Nos</SecTitle>
+                        <SecTxt>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus laoreet aliquet quam ac ultricies. Vivamus mi diam, tincidunt eu mattis non, pulvinar a diam. Vestibulum congue vel risus ut commodo. Donec congue, lacus in malesuada placerat, orci odio pretium velit, id cursus lectus dolor non nisl. Sed consectetur sed erat sed finibus. Etiam vitae velit et quam viverra lobortis. Vestibulum gravida et odio sit amet porta. Quisque aliquet lorem ac nunc consectetur, vitae condimentum quam accumsan. Nam pharetra quam non tortor porta convallis. 
+                        
+                        </SecTxt>
+                    </SecNoneBg>
+
+                    {/* Section #02 */}
+                    <SecWithBg id='trabalhos' src={imgArt01} side='right'>
+                        <TextContainer>
+                            <SecTitle>Trabalhos</SecTitle>
+                            <SecTxt>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus laoreet aliquet quam ac ultricies. Vivamus mi diam, tincidunt eu mattis non, pulvinar a diam. Vestibulum congue vel risus ut commodo. Donec congue, lacus in malesuada placerat, orci odio pretium velit, id cursus lectus dolor non nisl. Sed consectetur sed erat sed finibus.
+                            
+                            </SecTxt>
+                        </TextContainer>
+                    </SecWithBg>
+                    
+                    {/* Section #03 */}
+                    <SecWithBg id='metodo' src={imgArt02} side='left'>
+                        <TextContainer>
+                            <SecTitle>Metodo</SecTitle>
+                            <SecTxt>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus laoreet aliquet quam ac ultricies. Vivamus mi diam, tincidunt eu mattis non, pulvinar a diam. Vestibulum congue vel risus ut commodo. Donec congue, lacus in malesuada placerat, orci odio pretium velit, id cursus lectus dolor non nisl. Sed consectetur sed erat sed finibus.
+                            
+                            </SecTxt>
+                        </TextContainer>
+                    </SecWithBg>
+
+                    {/* Section #04 */}
+                    
+                </article>
             </MainStyled>
         </>
     )
