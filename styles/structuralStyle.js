@@ -262,3 +262,89 @@ export function AllyBox({facebook, instagram, name}){
         </>
     )
 }
+
+export const FooterStyled = styled.footer`
+    width:100%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-direction:row;
+    @media (max-width: 400px) {
+        flex-direction:column;
+    }
+`
+
+export function FooterLogo({src, alt}){
+    const FlItSelf = styled.div`
+        width:50%;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+    `
+    const LogoItSelf = styled.div`
+        width:30%;
+        display:flex;
+        filter:invert(100%);
+        @media (max-width: 700px) {
+            width:130px;
+        }
+    `
+    return(
+        <>
+            <FlItSelf>
+                <LogoItSelf>
+                    <Img src={src} alt={alt} />
+                </LogoItSelf>
+            </FlItSelf>
+        </>
+    )
+}
+export const FooterInfo = styled.div`
+    width:50%;
+    display:flex;
+    flex-wrap:wrap;
+`
+export const InfoBox = styled.div`
+    width:50%;
+    display:flex;
+    color:white;
+    flex-direction:column;
+    padding-right:30px;
+    @media (min-width: 400px) and (max-width: 800px) {
+        width:100%;
+        padding-right:40%;
+    }
+    @media (max-width: 400px) {
+        width:100%;
+        justify-content:center;
+        align-items:center;
+        padding-right:0px;
+    }
+`
+export const FooterTitle = styled.h1`
+    display:flex;
+    font-size:1.1rem;
+    justify-content:right;
+    margin-bottom:15px;
+`
+export function FooterLink(props){
+    const LinkItSelf = styled.a`
+        all:unset;
+        justify-content:right;
+        display:flex;
+        font-size:.9rem;
+        width:100%;
+        margin-bottom:10px;
+        @media (max-width: 400px) {
+            justify-content:center;
+            align-items:center;
+        }
+    `
+    return(
+        <>
+            <LinkItSelf href={props.href}>
+                {props.children}
+            </LinkItSelf>
+        </>
+    )
+}

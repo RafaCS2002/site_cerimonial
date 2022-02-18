@@ -3,7 +3,7 @@ import React from 'react';
 import {
     HeaderStyled, ButtonStyled, MainStyled, LogoImgStyled, DivLogoStyled,
     Holder, Option, IntroImage, SecNoneBg, SecTitle, SecTxt, SecWithBg, TextContainer,
-    BoxesContainer, AllyBox
+    BoxesContainer, AllyBox, FooterStyled, FooterLogo, FooterInfo, InfoBox, FooterTitle, FooterLink
 } from '../styles/structuralStyle';
 import logo from '../public/img/logo.png';
 import { NavButton } from '../src/components/navButton';
@@ -23,7 +23,7 @@ export default function mainApp() {
                         <Option link={'#sobre_nos'}>Sobre Nos</Option>
                         <Option link={'#trabalhos'}>Trabalhos</Option>
                         <Option link={'#metodo'}>Metodo</Option>
-                        <Option link={'#'}>Aliados</Option>
+                        <Option link={'#aliados'}>Aliados</Option>
                         <NavButton/>
                     </Holder>
                 </HeaderStyled>
@@ -79,7 +79,23 @@ export default function mainApp() {
                         </BoxesContainer>
                     </SecNoneBg>
                 </article>
-                
+                <FooterStyled>
+                    <FooterLogo src={logo} alt={'Logo da Empresa'}/>
+                    <FooterInfo>
+                        <InfoBox>
+                            <FooterTitle>Contato</FooterTitle>
+                            <FooterLink href='#'>Link01</FooterLink>
+                            <FooterLink href='#'>Link02</FooterLink>
+                            <FooterLink href='#'>Link03</FooterLink>
+                        </InfoBox>
+                        <InfoBox>
+                            <FooterTitle>Redes Sociais</FooterTitle>
+                            <FooterLink href='#'>Link01</FooterLink>
+                            <FooterLink href='#'>Link02</FooterLink>
+                            <FooterLink href='#'>Link03</FooterLink>
+                        </InfoBox>
+                    </FooterInfo>
+                </FooterStyled>
             </MainStyled>
         </>
     )
