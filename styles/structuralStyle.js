@@ -2,6 +2,8 @@ import styled from 'styled-components';
 // import React from 'react';
 import Img from 'next/image';
 import mainPageStyle from '../styles/mainPage.module.css'
+import {IconContext} from "react-icons";
+import { AiFillFacebook as IconFb, AiOutlineInstagram as IconIg } from "react-icons/ai";
 
 export const MainStyled = styled.main`
     font-size:1rem;
@@ -101,9 +103,6 @@ export function IntroImage(props) {
         height:55vw;
         width:100%;
         overflow: hidden;
-        @media (max-width: 400px){
-            display:none;
-        }
     `
     return (
         <>
@@ -218,3 +217,48 @@ export const TextContainer = styled.div`
     }
 
 `
+export const BoxesContainer = styled.div`
+    width:95%;
+    display:flex;
+    flex-direction:row;
+    justify-content:space-evenly;
+    margin-top:50px;
+    flex-wrap:wrap;
+`
+export function AllyBox({facebook, instagram, name}){
+    const BoxItSelf = styled.div`
+        width:33%;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        margin-bottom:30px;
+        flex-direction:column;
+        @media (max-width: 400px) {
+            width:100%;
+        }
+        @media (min-width: 400px) and (max-width:800px) {
+            width:50%;
+        }
+    `
+    const IconsHolder = styled.div`
+        display:flex;
+        height:30px;
+        width:100%;
+        justify-content:center;
+        align-items:center;
+        flex-direction:row;
+    `
+    return(
+        <>
+            <BoxItSelf>
+                <h1>{name}</h1>
+                <IconsHolder>
+                    <IconContext.Provider value={{size:25}}>
+                        <IconFb onClick={()=>{location.href=`${facebook}`}}/>
+                        <IconIg onClick={()=>{location.href=`${instagram}`}}/>
+                    </IconContext.Provider>
+                </IconsHolder>
+            </BoxItSelf>
+        </>
+    )
+}
